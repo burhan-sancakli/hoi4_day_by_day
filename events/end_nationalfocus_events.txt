@@ -1,0 +1,13 @@
+﻿add_namespace = end_national_focus_events
+country_event = {
+	id = end_national_focus_events.1
+	title = end_national_focus_events.1.t
+	desc = end_national_focus_events.1.d
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		complete_national_focus = GER_four_year_plan
+		set_variable = { progress = 0}
+	}
+}

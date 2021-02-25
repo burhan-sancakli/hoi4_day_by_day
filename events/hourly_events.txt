@@ -1,0 +1,28 @@
+﻿
+add_namespace = hourly_events
+
+country_event = { #Only on the main country (ideally on no country, as countries tend to capitulate and potentially mess up)
+	id = hourly_events.1
+	title = hourly_events.1.t
+	desc = hourly_events.1.d
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		update_date = yes
+		country_event = { id = hourly_events.1 hours = 2 }		
+	}
+}
+country_event = { #
+	id = hourly_events.2
+	title = hourly_events.2.t
+	desc = hourly_events.2.d
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		#update_nationalfocus = yes
+		#add_to_variable = { progress = 0.1}
+		country_event = { id = hourly_events.2 hours = 2 }		
+	}
+}

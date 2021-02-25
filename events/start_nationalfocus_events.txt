@@ -1,0 +1,12 @@
+﻿add_namespace = start_national_focus_events
+country_event = {
+	id = start_national_focus_events.1
+	title = start_national_focus_events.1.t
+	desc = start_national_focus_events.1.d
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		country_event = { id = GER_end_national_focus_events.1 hours = 71 }
+	}
+}

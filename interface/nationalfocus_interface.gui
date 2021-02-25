@@ -1,0 +1,30 @@
+guiTypes = {
+	containerWindowType = {
+		name = "make_nationalfocus_progress"
+		position = { x = 405 y = 120 }
+		size = { width=780 height=496 }
+		Orientation = CENTER_UP
+		origo = CENTER_UP
+		 
+		iconType = {
+			name = "nationalfocus_bar_bg"
+			spriteType = "GFX_pol_goal_progress_frame"
+			position = { x = 0 y = 0 }
+			pdx_tooltip = "NATIONALFOCUS_BAR_INFO"
+		}
+		containerWindowType = {
+			name = "make_nationalfocus_progress_bar"
+			position = {x=0 y=0}
+			size = { width=237 height=6 }
+			orientation = upper_left
+			clipping = yes
+			
+			iconType = {
+				name = "nationalfocus_bar"
+				spriteType = "GFX_activegoal_progress"
+				position = { x=0 y=0 }
+			}
+		}	
+	}
+
+}

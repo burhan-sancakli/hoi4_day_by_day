@@ -1,0 +1,20 @@
+guiTypes = {
+	containerWindowType = {
+		name = "date_on_hourly_container"
+		position = { x = -300 y = 10 }
+		Orientation = UPPER_RIGHT
+		origo = UPPER_RIGHT
+		
+		instantTextBoxType = {
+			name = "date_on_hourly"
+			position = { x = 0 y = 0 }
+			borderSize = {x = 0 y = 0}
+			font = "hoi_18mbs"
+			text = "[?global.day] [GET_MONTH_TEXT], [?global.modded_year]"
+			maxWidth = 150
+			maxHeight = 32
+			format = right
+			Orientation = "CENTER_UP"	
+		}	
+	}
+}

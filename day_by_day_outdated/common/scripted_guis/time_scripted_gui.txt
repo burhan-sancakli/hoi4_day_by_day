@@ -1,0 +1,18 @@
+scripted_gui = {
+	date_on_hourly_gui = {
+		context_type = player_context
+		window_name = "date_on_hourly_container"
+		visible = {
+			is_ai = no
+		}
+		ai_enabled = {
+			always = no
+		}
+		effects = {
+			date_on_hourly = {
+				#empty
+			}
+		}
+	}
+}
+

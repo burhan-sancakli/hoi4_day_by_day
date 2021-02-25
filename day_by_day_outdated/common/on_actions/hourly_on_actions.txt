@@ -1,0 +1,24 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			set_variable = { global.modded_year = global.year }
+			set_variable = { global.modded_date = global.date }
+			set_variable = { global.modded_num_days = global.num_days }
+			set_variable = { global.num_months = 1 }
+			set_variable = { global.day = 1 }
+			set_variable = { global.month = 1 }
+			initialize_date = yes
+			every_country = { #Wanted a quick way to get the main player. But this quick way WILL create problems in multiplayer.
+				if = {
+					limit = {
+						is_ai = no
+					}
+					country_event = { id = hourly_events.1 hours = 1 }
+				}
+			}
+			every_country = {
+				country_event = { id = hourly_events.2 hours = 1 }
+			}
+		}
+	}
+}

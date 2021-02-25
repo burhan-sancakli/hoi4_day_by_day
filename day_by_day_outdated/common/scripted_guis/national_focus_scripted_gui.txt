@@ -1,0 +1,28 @@
+scripted_gui = {
+	coreization = {
+		context_type = player_context
+		window_name = "make_nationalfocus_progress"
+		parent_window_token = politics_tab
+		visible = {
+			has_variable = progress
+			check_variable = { progress < -3.28 }
+		}
+		visible = {
+			#is_ai = no
+			always = yes
+		}
+		ai_enabled = {
+			#always = no
+			always = yes
+		}
+		effects = {
+
+		}
+		properties = {
+			nationalfocus_bar = {
+				x = progress
+			}
+		}
+	}
+}
+

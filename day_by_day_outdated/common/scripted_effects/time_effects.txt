@@ -1,0 +1,194 @@
+go_to_next_day = {
+	add_to_variable = {
+		var = global.modded_date
+		value = 0.024
+	}	
+	add_to_variable = {
+		var = global.modded_num_days
+		value = 1
+	}
+	add_to_variable = {
+		var = global.day
+		value = 1
+	}
+	if = {
+		limit = {
+			check_variable = { progress < -3.28 }
+		}
+		add_to_variable = {
+			var = progress
+			value = 3.28
+		}
+	}
+	
+}
+go_to_next_month = {
+	set_variable = { global.day = 1 }
+	add_to_variable = {
+		var = global.month
+		value = 1
+	}
+}
+go_to_next_year = {
+	set_variable = { global.day = 1 }
+	set_variable = { global.month = 1 }
+	add_to_variable = {
+		var = global.modded_year
+		value = 1
+	}
+}
+update_month_text = {
+	if = {
+		limit = {
+			check_variable = { global.month = 1 }
+		}
+		set_variable = { chars^0 = 74 } #J
+		set_variable = { chars^1 = 97 } #a
+		set_variable = { chars^2 = 110 } #n
+	}
+	else_if = {
+		limit = {
+			check_variable = { global.month = 2 }
+		}
+		set_variable = { chars^0 = 70 } #F
+		set_variable = { chars^1 = 101 } #e
+		set_variable = { chars^2 = 98 } #b
+	}
+	else_if = {
+		limit = {
+			check_variable = { global.month = 3 }
+		}
+		set_variable = { chars^0 = 77 } #M
+		set_variable = { chars^1 = 97 } #a
+		set_variable = { chars^2 = 114 } #r
+	}
+	else_if = {
+		limit = {
+			check_variable = { global.month = 4 }
+		}
+		set_variable = { chars^0 = 65 } #A
+		set_variable = { chars^1 = 112 } #p
+		set_variable = { chars^2 = 114 } #r
+	}
+	else_if = {
+		limit = {
+			check_variable = { global.month = 5 }
+		}
+		set_variable = { chars^0 = 77 } #M
+		set_variable = { chars^1 = 97 } #a
+		set_variable = { chars^2 = 121 } #y
+	}
+	else_if = {
+		limit = {
+			check_variable = { global.month = 6 }
+		}
+		set_variable = { chars^0 = 74 } #J
+		set_variable = { chars^1 = 117 } #u
+		set_variable = { chars^2 = 110 } #n
+	}
+	else_if = {
+		limit = {
+			check_variable = { global.month = 7 }
+		}
+		set_variable = { chars^0 = 74 } #J
+		set_variable = { chars^1 = 117 } #u
+		set_variable = { chars^2 = 108 } #l
+	}
+	else_if = {
+		limit = {
+			check_variable = { global.month = 8 }
+		}
+		set_variable = { chars^0 = 65 } #A
+		set_variable = { chars^1 = 117 } #u
+		set_variable = { chars^2 = 103 } #g
+	}
+	else_if = {
+		limit = {
+			check_variable = { global.month = 9 }
+		}
+		set_variable = { chars^0 = 83 } #S
+		set_variable = { chars^1 = 101 } #e
+		set_variable = { chars^2 = 112 } #p
+	}
+	else_if = {
+		limit = {
+			check_variable = { global.month = 10 }
+		}
+		set_variable = { chars^0 = 79 } #O
+		set_variable = { chars^1 = 99 } #c
+		set_variable = { chars^2 = 116 } #t
+	}
+	else_if = {
+		limit = {
+			check_variable = { global.month = 11 }
+		}
+		set_variable = { chars^0 = 78 } #N
+		set_variable = { chars^1 = 111 } #o
+		set_variable = { chars^2 = 118 } #v
+	}
+	else = {
+		set_variable = { chars^0 = 68 } #D
+		set_variable = { chars^1 = 101 } #e
+		set_variable = { chars^2 = 99 } #c
+	}
+}
+
+initialize_date = {
+	update_month_text = yes
+}
+
+update_date = {
+	go_to_next_day = yes
+	
+	##<IF SHOULD GO TO NEXT MONTH>##
+	if = {
+		limit = {
+			check_variable = { global.day = 29 }
+			check_variable = { global.month = 2 }
+		}
+		go_to_next_month = yes
+	}
+	else_if = {
+		limit = {
+			check_variable = { global.day = 31 }
+			OR = {
+				check_variable = { global.month = 4 }
+				check_variable = { global.month = 6 }
+				check_variable = { global.month = 9 }
+				check_variable = { global.month = 11 }
+			}
+		}
+		go_to_next_month = yes
+	}
+	else_if = {
+		limit = {
+			check_variable = { global.day = 32 }
+		}
+		go_to_next_month = yes
+	}
+	##</IF SHOULD GO TO NEXT MONTH>##
+	
+	##<IF SHOULD GO TO NEXT YEAR>##
+	if = {
+		limit = {
+			check_variable = { global.day = 30 }
+			check_variable = { global.month = 12 }
+		}
+		go_to_next_year = yes
+	}
+	##</IF SHOULD GO TO NEXT YEAR>##
+	update_month_text = yes
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
+
+update_nationalfocus = {
+
+}
